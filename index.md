@@ -2,7 +2,7 @@
 *Submitted By Saloni Ekal (ekal2@illinois.edu)*
  
  
-## Visualization 1: Bar Chart of Average Square Footage by Usage Description
+## Visualization 1: Exploring Average Square Footage by Building Usage: Filtered by Agency (Interactive)
 <div id="vis1"></div>
  
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -11,25 +11,29 @@
  
 <script>
   // Load the JSON specification for Visualization 1
-  vegaEmbed('#vis1', 'bar_chart.json').catch(console.error);
+  vegaEmbed('#vis1', 'interactive_bar_chart.json').catch(console.error);
 </script>
  
 **Writeup:**
 
-This bar chart visualizes the average square footage of buildings categorized by their usage descriptions, providing insights into how space is allocated across different building types. The x-axis encodes the average square footage (quantitative), and the y-axis encodes the usage description (nominal). A sequential color scheme is used, where each usage type is assigned a distinct color to improve visual distinction, though no ordinal relationship exists between categories. The dataset was grouped by the Usage Description column, and the mean of the Square Footage was calculated, while missing values were removed to ensure accurate data representation. This plot builds on similar grouping methods from Homework #5 but is created using Altair, requiring additional data transformation steps such as handling row limits and preparing the dataset with Pandas.
+This bar chart visualizes the average square footage of buildings based on their usage description, with an option to filter by specific agencies. Each bar represents a usage type, making it easy to compare how different categories stack up in terms of average square footage. The interactivity comes from a drop-down menu that lets you focus on a particular agency, simplifying the view to suit your exploration. Additionally, hovering over a bar reveals a tooltip with details like the agency name, usage description, and average square footage, which adds depth to the visualization.
+
+The chart uses the x-axis to encode the average square footage (a quantitative variable) and the y-axis to represent the usage description (a nominal variable). Colors are mapped to the usage descriptions to differentiate the bars, though no legend is needed since the y-axis already provides the category names. Before creating this chart, the data was transformed by grouping it by agency name and usage description, then calculating the mean square footage for each group. This step was essential to simplify the dataset and focus on averages instead of individual buildings. This approach ties back to Homework #5, where filtering and aggregation were also used to streamline data for better visual clarity.
  
  
-## Visualization 2 : Interactive Scatter Plot of Square Footage vs. Year Acquired
+## Visualization 2 : Year of Acquisition vs. Square Footage: An Agency-Level Analysis (Interactive)
 <div id="vis2"></div>
  
 <script>
   // Load the JSON specification for Visualization 2
-  vegaEmbed('#vis2', 'interactive_scatter.json').catch(console.error);
+  vegaEmbed('#vis2', 'interactive_scatter_plot.json').catch(console.error);
 </script>
  
 **Writeup:**
 
-The scatter plot visualizes the relationship between building square footage and the year they were acquired, offering insights into trends over time and differences between agencies. The x-axis encodes the Year Acquired (quantitative), and the y-axis represents Square Footage (quantitative), with color used to distinguish buildings by Agency Name (nominal). The dataset was cleaned by removing rows with missing or non-numeric values in the Year Acquired and Square Footage columns. Interactivity is introduced with a legend filter, allowing users to select and highlight specific agencies, making it easier to compare data points by agency. This plot expands upon Homework #5 by adding interactivity and using Altair's enhanced features, which provide a more dynamic and informative user experience.
+The scatter plot explores the relationship between the year a building was acquired and its square footage, with color-coded points representing different agencies. Each dot is a building, and users can interact in two ways: they can highlight specific points by clicking on them or filter the view by selecting multiple agencies in the legend. Tooltips provide additional context by showing details like the building's name, square footage, and acquisition year, making it easier to spot interesting patterns or outliers.
+
+In this visualization, the x-axis represents the year acquired (a quantitative variable), and the y-axis captures the square footage (also quantitative). The colors are mapped to agency names, with a distinct palette ensuring that points for different agencies are easy to distinguish. Interactivity is enhanced through opacity changes—highlighted points remain fully visible, while the rest fade slightly to provide context without overwhelming the view. Unlike the bar chart, this scatter plot works directly with the raw data instead of pre-aggregated values, offering a closer look at individual buildings. This builds on techniques used in Homework #5, where interactivity also played a key role in exploring subcategories and uncovering trends.
  
  
 #### Resources
