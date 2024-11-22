@@ -3,8 +3,6 @@
  
  
 ## Visualization 1: Bar Chart of Average Square Footage by Usage Description
- 
-<!-- Embed the JSON chart for License types across different States -->
 <div id="vis1"></div>
  
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -21,7 +19,6 @@
  
  
 ## Visualization 2 : Interactive Scatter Plot of Square Footage vs. Year Acquired
-<!-- Embed the JSON chart for Top 5 License Status Distribution by Cities -->
 <div id="vis2"></div>
  
 <script>
