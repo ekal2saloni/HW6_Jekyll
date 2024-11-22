@@ -1,2 +1,2 @@
-# HW6_Jekyll
+# HW6_Jekyll_Webpage
 Homework 6
